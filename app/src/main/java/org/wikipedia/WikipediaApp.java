@@ -75,7 +75,7 @@ public class WikipediaApp extends Application {
     private FunnelManager funnelManager;
     private SessionFunnel sessionFunnel;
     private NetworkConnectivityReceiver connectivityReceiver = new NetworkConnectivityReceiver();
-    private ActivityLifecycleHandler activityLifecycleHandler = new ActivityLifecycleHandler();
+    private final ActivityLifecycleHandler activityLifecycleHandler = new ActivityLifecycleHandler();
     private Database database;
     private String userAgent;
     private WikiSite wiki;
@@ -453,7 +453,7 @@ public class WikipediaApp extends Application {
     }
 
     public boolean haveMainActivity() {
-        return activityLifecycleHandler.haveMainActivity();
+        return activityLifecycleHandler.getHaveMainActivity();
     }
 
     public boolean isAnyActivityResumed() {
